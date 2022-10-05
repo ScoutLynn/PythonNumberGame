@@ -1,0 +1,101 @@
+# Importing the random 
+import random 
+
+# Making the actual random number
+randomNumber = random.randint(1,10)
+
+# Lists for the second line of hints
+listOne = ["This Number Is The Smallest One You Can Get", "Anything Divided By This Number Is Itself", " The Square, And Cube, Of This Number Is Itself"]
+listTwo = ["This Number Is The Only Even Prime Number", "All Even Numbers Can Be Divided By This Number", "This Number Is The Square Root Of Four"]
+listThree = ["This Number Is The Square Root Of Nine", "This Number Is The First Uneven Prime Number", "This Number Is The First Digit Of Pi"]
+listFour = ["This Number Is The Cube Root Of Sixty-Four", "This Is The First Number That Can Evenly Be Divided By Two, That Isn't Two", "This Number Is Exact Number Of Sides On Any Given Quadrilateral"]
+listFive = ["This Number Is The First Number That Can Be Rounded Up", "This Number Is The Midpoint Of The Set", "This Number Is The Product Of (3 + 2)(8 - 7)"]
+listSix = ["This Number Is The Amount Of Legs On Any Insect", "This Number Is The Same As The Amount Of Sides On A Cube", "This Number Is The Square Root Of Thirty-Six"]
+listSeven = ["This Number Is The Most Commonly Rolled Number With Two Six-Sided Die", "This Number Is The Second Prime Number That Would Round Up", "This Number Is The Same Amount Of Class Periods In A School Day"]
+listEight = ["A Stop Sign Has This Many Sides", "This Number Is Associated With The Word Octo", "This Number Flipped On It's Side Is Infinity"]
+listNine = ["This Number Is The Square Root Of Eighty-One", "This Number Is Three Squared", "This Numbber Is The West Most Number On A Clock"]
+listTen = ["This Number Is The First Two Digit Whole Number", "This Number Is The Biggest In The Set", "If This Number Is Multiplied By any Number It's Decimal Place Will Move Up One Digit"]
+
+# Initial guess input
+hint = input("Do You Need A Hint? ")
+
+# Hint system 
+if hint == "no":
+    guess = int(input("Guess A Number 1-10: "))
+
+if hint == "yes":
+    if randomNumber < 5:
+        print("The Number Will Round Down To Zero")
+        guess = int(input("Guess A Number 1-10: "))
+    else:
+        print("The Number Will Round Up To Ten")
+        guess = int(input("Guess A Number 1-10: "))
+
+# More specific hints
+if guess != randomNumber:
+    print("Not Quite.")
+    hintTwo = input("Do You Want Another Hint? ") 
+    if hintTwo == "yes":
+        if randomNumber == 1:
+            print(random.choice(listOne))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 2:
+            print(random.choice(listTwo))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 3:
+            print(random.choice(listThree))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 4:
+            print(random.choice(listFour))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 5:
+            print(random.choice(listFive))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 6:
+            print(random.choice(listSix))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 7:
+            print(random.choice(listSeven))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 8:
+            print(random.choice(listEight))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 9:
+            print(random.choice(listNine))
+            guess = int(input("Guess A Number 1-10: "))
+        if randomNumber == 10:
+            print(random.choice(listTen))
+            guess = int(input("Guess A Number 1-10: "))
+    else:
+        guess = int(input("Guess A Number 1-10: "))
+
+# If statement with an embedded loop to repeat if you get the answer wrong
+# Also repeats the game over again
+while guess == randomNumber:
+    print("You Guessed It!")
+    newGame = input("Do You Want To Play Again? ")
+    if newGame == "yes":
+        randomNumber = random.randint(1,10)
+        
+        guess = int(input("Guess A Number 1-10: "))
+    else:
+        print("Good Game!")
+else:   
+    while randomNumber != guess:
+        print("Incorrect, Try Again.")
+        guess = int(input("Guess A Number 1-10: "))
+    else:
+        print("You Finally Got It!")
+        newGame = input("Do You Want To Play Again? ")
+        if newGame == "yes":
+            guess = int(input("Guess A Number 1-10: "))
+        else:
+            print("Good Game!")
+            
+
+
+
+
+    
+
+    
